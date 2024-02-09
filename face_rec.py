@@ -5,15 +5,15 @@ import cv2
 alg = "haarcascade_frontalface_default.xml"
 # passing the algorithm to OpenCV
 haar_cascade = cv2.CascadeClassifier(alg)
-# loading the image path into file_name variable - replace <INSERT YOUR IMAGE NAME HERE> with the path to your image
-file_name = "test-image.png"
+# loading the image path into file_name variable 
+file_name = "input\who_am_i.jpg"
 # reading the image
 img = cv2.imread(file_name, 0)
 # creating a black and white version of the image
 gray_img = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
 # detecting the faces
 faces = haar_cascade.detectMultiScale(
-    gray_img, scaleFactor=1.05, minNeighbors=2, minSize=(100, 100)
+    gray_img, scaleFactor=1.00, minNeighbors=2, minSize=(100, 100)
 )
 
 i = 0
