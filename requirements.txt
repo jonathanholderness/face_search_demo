@@ -1,3 +1,7 @@
+torch
+torchvision
+torchaudio
+ultralytics
 opencv-python
 imgbeddings
 psycopg2-binary

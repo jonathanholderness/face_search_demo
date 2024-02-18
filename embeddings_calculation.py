@@ -6,7 +6,7 @@ import psycopg2
 import os
 
 # connecting to the database - replace the SERVICE URI with the service URI
-conn = psycopg2.connect("<SERVICE_URI>")
+# conn = psycopg2.connect("<SERVICE_URI>")
 
 for filename in os.listdir("stored-faces"):
     # opening the image
@@ -15,7 +15,8 @@ for filename in os.listdir("stored-faces"):
     ibed = imgbeddings()
     # calculating the embeddings
     embedding = ibed.to_embeddings(img)
-    cur = conn.cursor()
-    cur.execute("INSERT INTO pictures values (%s,%s)", (filename, embedding[0].tolist()))
-    print(filename)
-conn.commit()
+    print(embedding)
+#     cur = conn.cursor()
+#     cur.execute("INSERT INTO pictures values (%s,%s)", (filename, embedding[0].tolist()))
+#     print(filename)
+# conn.commit()
